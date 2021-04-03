@@ -116,17 +116,43 @@ export default Vue.extend({
 </script>
 {{else}}
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-full.svg"
+  <q-page padding>
+    <div class="flex flex-center">
+      <img
+      alt="Zemfrog logo"
+      :class="$q.platform.is.mobile ? 'fit' : ''"
+      src="https://raw.githubusercontent.com/zemfrog/zemfrog/master/docs/_static/logo.png"
+      :height="$q.platform.is.desktop ? '300px' : ''"
+      :width="$q.platform.is.desktop ? '500px' : ''"
     >
+    </div>
+    <div class="row flex flex-center q-gutter-md">
+      <q-btn type="a" href="https://github.com/zemfrog/zemfrog" outline label="Github" icon="lab la-github"></q-btn>
+      <q-btn type="a" href="https://zemfrog.readthedocs.io/en/latest/" outline label="Docs" icon="emoji_objects"></q-btn>
+    </div>
+    <q-footer>
+      <div class="column bg-dark text-white text-bold">
+      <div class="flex items-center justify-center q-mt-md q-gutter-md">
+        <q-btn type="a" href="https://github.com/aprilahijriyan" round color="primary" icon="lab la-github" />
+        <q-btn type="a" href="https://facebook.com/apriladev" round color="primary" icon="lab la-facebook-f" />
+        <q-btn type="a" href="https://linkedin.com/in/apriladev" round color="primary" icon="lab la-linkedin-in" />
+      </div>
+      <div class="flex items-center justify-center q-mt-md">
+        <p>Copyright (c) Aprila Hijriyan. All right reserved</p>
+      </div>
+    </div>
+    </q-footer>
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data() {
+    return {
+      tab: 'intro'
+    }
+  }
 }
 </script>
 {{/if}}
