@@ -41,9 +41,7 @@ module.exports = {{#preset.typescript}}configure({{/preset.typescript}}function 
       {{#preset.i18n}}
       'i18n',
       {{/preset.i18n}}
-      {{#preset.axios}}
       'axios',
-      {{/preset.axios}}
     ],
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -58,7 +56,7 @@ module.exports = {{#preset.typescript}}configure({{/preset.typescript}}function 
       // 'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
-      // 'line-awesome',
+      'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
@@ -123,7 +121,9 @@ module.exports = {{#preset.typescript}}configure({{/preset.typescript}}function 
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'LocalStorage',
+      ]
     },
 
     // animations: 'all', // --- includes all animations
