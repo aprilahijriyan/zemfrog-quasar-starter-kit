@@ -26,7 +26,8 @@ module.exports = {
 
     author: {
       type: 'string',
-      message: 'Author'
+      message: 'Author',
+      default: 'Aprila Hijriyan'
     },
 
     css: {
@@ -83,17 +84,19 @@ module.exports = {
           value: 'lint',
           checked: true
         },
-        {
-          name: 'TypeScript',
-          value: 'typescript'
-        },
+        // {
+        //   name: 'TypeScript',
+        //   value: 'typescript'
+        // },
         {
           name: 'Vuex',
-          value: 'vuex'
+          value: 'vuex',
+          checked: true
         },
         {
           name: 'Axios',
-          value: 'axios'
+          value: 'axios',
+          checked: true
         },
         {
           name: 'Vue-i18n',
@@ -106,30 +109,30 @@ module.exports = {
       ]
     },
 
-    typescriptConfig: {
-      when: 'preset.typescript',
-      type: 'list',
-      message: 'Pick a component style:',
-      choices: [
-        {
-          name:
-            'Composition API (recommended) (https://github.com/vuejs/composition-api)',
-          value: 'composition',
-          short: 'Composition',
-        },
-        {
-          name:
-            'Class-based (recommended) (https://github.com/vuejs/vue-class-component & https://github.com/kaorun343/vue-property-decorator)',
-          value: 'class',
-          short: 'Class',
-        },
-        {
-          name: 'Options API',
-          value: 'options',
-          short: 'options',
-        }
-      ]
-    },
+    // typescriptConfig: {
+    //   when: 'preset.typescript',
+    //   type: 'list',
+    //   message: 'Pick a component style:',
+    //   choices: [
+    //     {
+    //       name:
+    //         'Composition API (recommended) (https://github.com/vuejs/composition-api)',
+    //       value: 'composition',
+    //       short: 'Composition',
+    //     },
+    //     {
+    //       name:
+    //         'Class-based (recommended) (https://github.com/vuejs/vue-class-component & https://github.com/kaorun343/vue-property-decorator)',
+    //       value: 'class',
+    //       short: 'Class',
+    //     },
+    //     {
+    //       name: 'Options API',
+    //       value: 'options',
+    //       short: 'options',
+    //     }
+    //   ]
+    // },
 
     lintConfig: {
       when: 'preset.lint',
