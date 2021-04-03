@@ -2,7 +2,7 @@
 ![Quasar Framework logo](https://cdn.quasar.dev/logo/svg/quasar-logo-full-inline.svg)
 
 # Quasar Framework App Template
-> Starter Kit for a Quasar Project.
+> Starter Kit for a Zemfrog + Quasar Project.
 
 ## Usage
 
@@ -13,7 +13,7 @@ First, make sure you have Node >= 8 and NPM >= 5.
 $ npm install -g @quasar/cli
 
 # generate a project folder
-$ quasar create <folder_name>
+$ quasar create <folder_name> --kit aprilahijriyan/zemfrog-quasar-starter-kit
 
 $ cd my-project
 $ yarn
