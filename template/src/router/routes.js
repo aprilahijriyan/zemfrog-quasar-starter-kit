@@ -1,5 +1,6 @@
 import auth from '../middlewares/auth'
 import force_404 from '../middlewares/force_404'
+import is_logged_in from '../middlewares/is_logged_in'
 
 const routes = [
   {
@@ -14,14 +15,16 @@ const routes = [
     component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Login.vue') }
-    ]
+    ],
+    beforeEnter: is_logged_in
   },
   {
     path: '/register',
     component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Register.vue') }
-    ]
+    ],
+    beforeEnter: is_logged_in
   },
   {
     path: '/confirm/account/:token',
@@ -35,7 +38,8 @@ const routes = [
     component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', component: () => import('pages/RequestPasswordReset.vue') }
-    ]
+    ],
+    beforeEnter: is_logged_in
   },
   {
     path: '/password-reset/:token',
@@ -48,8 +52,9 @@ const routes = [
     path: '/dashboard',
     component: () => import('layouts/DashboardLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/dashboard/Index.vue'), beforeEnter: auth }
-    ]
+      { path: '', component: () => import('pages/dashboard/Index.vue')}
+    ],
+    beforeEnter: auth
   },
   // Always leave this as last one,
   // but you can also remove it
