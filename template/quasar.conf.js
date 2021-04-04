@@ -123,6 +123,7 @@ module.exports = {{#preset.typescript}}configure({{/preset.typescript}}function 
       // Quasar plugins
       plugins: [
         'LocalStorage',
+        'Notify'
       ]
     },
 
