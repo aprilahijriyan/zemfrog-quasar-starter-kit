@@ -1,3 +1,4 @@
+import auth from '../middlewares/auth'
 
 const routes = [
   {
@@ -40,6 +41,13 @@ const routes = [
     component: () => import('layouts/BlankLayout.vue'),
     children: [
       { path: '', component: () => import('pages/PasswordReset.vue') }
+    ]
+  },
+  {
+    path: '/dashboard',
+    component: () => import('layouts/DashboardLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/dashboard/Index.vue'), beforeEnter: auth }
     ]
   },
   // Always leave this as last one,
