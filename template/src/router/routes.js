@@ -1,4 +1,5 @@
 import auth from '../middlewares/auth'
+import force_404 from '../middlewares/force_404'
 
 const routes = [
   {
@@ -53,8 +54,13 @@ const routes = [
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '*',
+    path: '/error-404',
     component: () => import('pages/Error404.vue')
+  },
+  {
+    path: '*',
+    component: () => import('pages/Error404.vue'),
+    beforeEnter: force_404
   }
 ]
 
